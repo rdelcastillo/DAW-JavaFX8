@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Ejemplo de FXML usando Scene Builder" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="190.0" fitWidth="429.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../../Imágenes/Humor%20indignado/Nuevas%20Tecnologías/08S-agosto-2015-COLORmini.jpg" />
+         </image>
+      </ImageView>
+      <Separator />
+      <Label text="TextField" />
+      <TextField alignment="CENTER" text="Soy un campo chiquito de texto" />
+      <Label text="TextArea" />
+      <TextArea text="Aqui pongo lo que quiero.&#10;&#10;&#10;Y aqui tambien." />
+      <Button mnemonicParsing="false" text="Soy un botón que no hace nada" />
+   </children>
+</VBox>
