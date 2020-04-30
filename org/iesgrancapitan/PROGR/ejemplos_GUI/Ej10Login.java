@@ -10,13 +10,14 @@ package org.iesgrancapitan.PROGR.ejemplos_GUI;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -44,19 +45,30 @@ public class Ej10Login extends Application {
     root.add(password, 1, 1);
 
     Button button = new Button("Ok");
-    button.setAlignment(Pos.CENTER);
-    root.add(button, 0, 2, 2, 2);       // colspan=1, rowspan=1
+    button.setDefaultButton(true);
+    root.add(button, 0, 2, 2, 1);               // colspan=2, rowspan=1
+    //GridPane.setColumnSpan(button, 2);        // otra forma de hacer columnspan
+    GridPane.setHalignment(button, HPos.CENTER);
 
     // manejo de eventos del botón
     button.setOnAction(new EventHandler<ActionEvent>() {
-
       @Override
       public void handle(ActionEvent e) {
         System.out.println(user.getText() + " ha hecho click.");
         System.out.println("La contraseña introducida ha sido '" + password.getText() + "'");
       }
     });
-
+    
+    button.setOnMousePressed(new EventHandler<MouseEvent>() {
+      @Override
+      public void handle(MouseEvent e) {
+        System.out.println("Estás presionando el botón Ok.");
+      }
+    });
+    
+    // con una expresión lambda es más corto (si hubiera varias líneas usaríamos llaves)
+    button.setOnMouseReleased(event -> System.out.println("Has soltado el botón Ok.")); 
+    
     // creamos escena y asignamos a escenario
     Scene scene = new Scene(root);
     primaryStage.setScene(scene);

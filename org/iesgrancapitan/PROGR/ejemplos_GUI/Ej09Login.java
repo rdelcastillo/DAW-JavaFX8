@@ -17,19 +17,19 @@ public class Ej09Login extends Application {
   @Override
   public void start(Stage primaryStage) {
     try {
-      
+
       FXMLLoader fxml = new FXMLLoader(this.getClass().getResource("vistas/Ej09Login.fxml"));
       GridPane root = fxml.<GridPane>load();  
       Scene scene = new Scene(root);
       primaryStage.setScene(scene);
       primaryStage.setTitle("App " + this.getClass().getSimpleName());     // nombre de la clase
       primaryStage.show();
-      
-      
+
+
     } catch (Exception e) {
       System.out.println(e.getMessage());
-  }
-    
+    }
+
   }
 
   public static void main(String[] args) {
