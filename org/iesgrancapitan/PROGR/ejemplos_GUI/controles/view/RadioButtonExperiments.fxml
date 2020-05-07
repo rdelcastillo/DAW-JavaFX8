@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesgrancapitan.PROGR.ejemplos_GUI.controles.view.RadioButtonExperimentsController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <RadioButton fx:id="leftRadioButton" mnemonicParsing="false" onAction="#log" text="Left" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <RadioButton fx:id="upRadioButton" mnemonicParsing="false" onAction="#log" text="Up" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <RadioButton fx:id="downRadioButton" mnemonicParsing="false" onAction="#log" text="Down" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <RadioButton fx:id="rightRadioButton" mnemonicParsing="false" onAction="#log" text="Right" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#fire" text="Check RadioButtons" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="52.0">
+               <image>
+                  <Image url="@eye.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+      <RadioButton fx:id="radioButton1" mnemonicParsing="false" onAction="#log" text="RadioButton1">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radioButton2" mnemonicParsing="false" onAction="#log" text="RadioButton2" toggleGroup="$toggleGroup" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+      <RadioButton fx:id="radioButton3" mnemonicParsing="false" onAction="#log" text="RadioButton3" toggleGroup="$toggleGroup" GridPane.columnIndex="2" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

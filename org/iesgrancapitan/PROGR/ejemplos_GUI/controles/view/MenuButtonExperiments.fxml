@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesgrancapitan.PROGR.ejemplos_GUI.controles.view.MenuButtonsExperimentsControler">
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesgrancapitan.PROGR.ejemplos_GUI.controles.view.MenuButtonExperimentsController">
    <children>
-      <SplitMenuButton mnemonicParsing="false" text="Options">
+      <MenuButton mnemonicParsing="false" text="Options">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
-            <MenuItem fx:id="menuItem3" mnemonicParsing="false" onAction="#fireMenuItem3" text="Action 3" />
+            <MenuItem mnemonicParsing="false" onAction="#fireMenuItem3" text="Action 3" />
         </items>
          <graphic>
             <ImageView pickOnBounds="true" preserveRatio="true">
@@ -21,6 +21,6 @@
                </image>
             </ImageView>
          </graphic>
-      </SplitMenuButton>
+      </MenuButton>
    </children>
 </HBox>
