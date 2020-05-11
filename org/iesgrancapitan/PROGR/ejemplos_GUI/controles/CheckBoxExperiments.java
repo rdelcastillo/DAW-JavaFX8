@@ -24,32 +24,34 @@ public class CheckBoxExperiments extends Application  {
   public void start(Stage primaryStage) throws Exception {
     primaryStage.setTitle("CheckBox Experiment 1");
 
-    CheckBox checkBox1 = new CheckBox("Off");
+    // You create a JavaFX CheckBox control via the CheckBox constructor
+    
+    CheckBox checkBox = new CheckBox("Off");
 
     // You can read the selected state of a CheckBox via its method isSelected()
 
-    checkBox1.setOnAction(value ->  {
-      if (checkBox1.isSelected()) {     
-        checkBox1.setText("On");
+    checkBox.setOnAction(value ->  {
+      if (checkBox.isSelected()) {     
+        checkBox.setText("On");
       } else {
-        checkBox1.setText("Off");
+        checkBox.setText("Off");
       }       
     });
 
-    Button button1 = new Button("Check");
-    button1.setOnAction(value ->  {
-      if (checkBox1.isSelected()) {
+    Button button = new Button("Check");
+    button.setOnAction(value ->  {
+      if (checkBox.isSelected()) {
         System.out.println("We are in ON.");
       } else {
         System.out.println("We are in OFF.");
       }       
     });
 
-    HBox hbox = new HBox(checkBox1, button1);
-    hbox.setPadding(new Insets(10,10,10,10));
-    hbox.setSpacing(25);
+    HBox hBox = new HBox(checkBox, button);
+    hBox.setPadding(new Insets(10,10,10,10));
+    hBox.setSpacing(25);
 
-    Scene scene = new Scene(hbox, 175, 50);
+    Scene scene = new Scene(hBox, 175, 50);
     primaryStage.setScene(scene);
     primaryStage.show();
 

@@ -24,20 +24,24 @@ public class ChoiceBoxExperiments extends Application  {
     primaryStage.setTitle("ChoiceBox Experiment 1");
 
     // You create a ChoiceBox simply by creating a new instance of the ChoiceBox class
+    
     ChoiceBox<String> choiceBox = new ChoiceBox<String>();
 
     // You can add choices to a ChoiceBox by obtaining its item collection and add items to it
+    
     choiceBox.getItems().add("Choice 1");
     choiceBox.getItems().add("Choice 2");
     choiceBox.getItems().add("Choice 3");
     
     // You can read the selected value of a ChoiceBox via its getValue() method. 
     // If no choice is selected, the getValue() method returns null
+    
     Button button1 = new Button("Check");
     button1.setOnAction(value ->  {
       System.out.println("The select value is " + choiceBox.getValue()); 
     });
 
+    
     HBox hbox = new HBox(choiceBox, button1);
     hbox.setPadding(new Insets(10,10,10,10));
     hbox.setSpacing(25);

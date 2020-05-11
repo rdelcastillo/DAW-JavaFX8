@@ -22,6 +22,10 @@ public class ImageViewExperiments extends Application  {
   public void start(Stage primaryStage) throws Exception {
     primaryStage.setTitle("ImageView Experiment 1");
 
+    // You create an ImageView control instance by creating an instance of the ImageView class. 
+    // The constructor of the ImageView class needs an instance of a javafx.scene.image.Image as parameter. 
+    // The Image object represents the image to be displayed by the ImageView control.
+    
     Image image = new Image(getClass().getResource("view/JavafxClasses.jpg").toString());
     ImageView imageView = new ImageView(image);
 

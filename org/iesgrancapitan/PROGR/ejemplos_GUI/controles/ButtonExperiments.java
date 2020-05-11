@@ -25,22 +25,27 @@ public class ButtonExperiments extends Application  {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    primaryStage.setTitle("HBox Experiment 1");
+    primaryStage.setTitle("Button Experiment 1");
 
+    // You create a button control by creating an instance of the Button class
+    
     Button button1 = new Button("My Button 1");
     
     // In order to respond to the click of a button you need to attach an event listener 
     // to the Button object
+    
     button1.setOnAction(value ->  {
       System.out.println("'My Button 1' clicked!");
     });
     
     // The JavaFX Button control supports text wrapping of the button text. 
     // You enable text wrapping on a JavaFX Button instance using the method setWrapText()
+    
     Button button2 = new Button("My Button 2 with longer text is this");
     button2.setWrapText(true);
     
     // It is possible to display an image inside a button next to the button text
+    
     Image image = new Image(getClass().getResource("view/menu.png").toString());
     ImageView imageView = new ImageView(image);
     Button button3 = new Button("My Button 3", imageView);
@@ -48,6 +53,7 @@ public class ButtonExperiments extends Application  {
     // You can set a mnemonic on a JavaFX Button instance. 
     // A mnemonic is a keyboard key which activates the button when pressed in conjunction 
     // with the ALT key. 
+    
     Button button4 = new Button();
     button4.setMnemonicParsing(true);
     button4.setText("_Click");

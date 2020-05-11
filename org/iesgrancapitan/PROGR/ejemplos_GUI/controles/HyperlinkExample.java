@@ -23,7 +23,8 @@ public class HyperlinkExample extends Application {
   @Override
   public void start(Stage primaryStage) {
     primaryStage.setTitle("Hyperlink Example");
-
+    
+    // In order to use a JavaFX Hyperlink control you must first create a Hyperlink instance.
     Hyperlink link = new Hyperlink("Click Me!");
 
     // To respond to clicks on a JavaFX Hyperlink you set an action listener on the Hyperlink instance

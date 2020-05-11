@@ -16,18 +16,19 @@ import javafx.stage.Stage;
 public class LabelExperiments extends Application  {
 
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Label Experiment");
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    primaryStage.setTitle("Label Experiment");
 
-        Label label = new Label("My Label");
+    // You create a label control instance by creating an instance of the Label class    
+    Label label = new Label("My Label");
 
-        Scene scene = new Scene(label, 200, 100);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+    Scene scene = new Scene(label, 200, 100);
+    primaryStage.setScene(scene);
+    primaryStage.show();
+  }
 
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
+  public static void main(String[] args) {
+    Application.launch(args);
+  }
 }

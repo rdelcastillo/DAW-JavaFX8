@@ -30,20 +30,24 @@ public class ComboBoxExperiments extends Application  {
     ComboBox comboBox = new ComboBox();
 
     // You can add choices to a ComboBox by obtaining its item collection and add items to it
+    
     comboBox.getItems().add("Choice 1");
     comboBox.getItems().add("Choice 2");
     comboBox.getItems().add("Choice 3");
     
     // A ComboBox is not editable by default. 
     // To make a ComboBox editable you must call the setEditable() method of the ComboBox
+    
     comboBox.setEditable(true);
     
     // You can read the selected value of a ComboBox via its getValue() method. 
     // If no choice is selected, the getValue() method returns null
+    
     Button button1 = new Button("Check");
     button1.setOnAction(value ->  {
       System.out.println("The select value is " + comboBox.getValue()); 
     });
+    
 
     HBox hbox = new HBox(comboBox, button1);
     hbox.setPadding(new Insets(10,10,10,10));

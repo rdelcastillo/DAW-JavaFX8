@@ -24,18 +24,24 @@ public class ToggleButtonExperiments extends Application  {
   @Override
   public void start(Stage primaryStage) throws Exception {
     primaryStage.setTitle("ToggleButton Experiment");
+    
+    // You create a JavaFX ToggleButton by creating an instance of the ToggleButton class.
 
     ToggleButton toggleButton1 = new ToggleButton("Left");
     ToggleButton toggleButton2 = new ToggleButton("Right");
     ToggleButton toggleButton3 = new ToggleButton("Up");
     ToggleButton toggleButton4 = new ToggleButton("Down");
 
+    // You can group JavaFX ToggleButton instances into a ToggleGroup. 
+    // A ToggleGroup allows at most one ToggleButton to be toggled (pressed) at any time. 
+    
     ToggleGroup toggleGroup = new ToggleGroup();
 
     toggleButton1.setToggleGroup(toggleGroup);
     toggleButton2.setToggleGroup(toggleGroup);
     toggleButton3.setToggleGroup(toggleGroup);
     toggleButton4.setToggleGroup(toggleGroup);
+    
 
     HBox hbox = new HBox(toggleButton1, toggleButton2, toggleButton3, toggleButton4);
 

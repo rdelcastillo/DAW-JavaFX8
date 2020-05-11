@@ -31,15 +31,18 @@ public class DatePickerExperiments extends Application  {
     primaryStage.setTitle("DatePicker Experiment 1");
 
     // You create a DatePicker control via the constructor of the DatePicker class
+    
     DatePicker datePicker = new DatePicker();
 
     // Reading the date selected in the DatePicker can be done using its getValue() method
     // The getValue() returns a LocalDate object representing the date selected in the DatePicker
+    
     Button button = new Button("Read Date");
     button.setOnAction(action -> {
       LocalDate value = datePicker.getValue();
       System.out.println(value);
     });
+    
 
     HBox hbox = new HBox(datePicker, button);
 
