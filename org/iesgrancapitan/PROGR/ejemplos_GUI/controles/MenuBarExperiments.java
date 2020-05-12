@@ -98,10 +98,10 @@ public class MenuBarExperiments extends Application {
 
     // A JavaFX Menu instance can fire several events which you can listen for in your application
 
-    menu2.setOnShowing(e -> { System.out.println("Showing Menu 2"); });
+    menu2.setOnShowing(e -> { System.out.println("Showing Menu 2"); });      
     menu2.setOnShown  (e -> { System.out.println("Shown Menu 2"); });
     menu2.setOnHiding (e -> { System.out.println("Hiding Menu 2"); });
-    menu2.setOnHidden (e -> { System.out.println("Hidden Menu 2"); });
+    menu2.setOnHidden (e -> System.out.println("Hidden Menu 2")); // withouts brackets (one instruction is not necessary)
 
     // In order to respond to the selection of a MenuItem you must set an event listener 
     // on the MenuItem.
@@ -152,6 +152,8 @@ public class MenuBarExperiments extends Application {
     toggleGroup.getToggles().add(choice1Item);
     toggleGroup.getToggles().add(choice2Item);
     toggleGroup.getToggles().add(choice3Item);
+    
+    choice2Item.setSelected(true);      // Default
 
     menu5.getItems().addAll(choice1Item, choice2Item, choice3Item);
 
@@ -194,8 +196,8 @@ public class MenuBarExperiments extends Application {
 
     MenuItem exit = new MenuItem("Exit");
     
-    KeyCombination gotoKeyCombination = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_DOWN);
-    exit.setAccelerator(gotoKeyCombination);
+    KeyCombination ctrlX = new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_DOWN);
+    exit.setAccelerator(ctrlX);
 
     exit.setOnAction(event -> {
       System.out.println("This is all folks!");

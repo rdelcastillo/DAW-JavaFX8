@@ -43,13 +43,13 @@ public class ComboBoxExperiments extends Application  {
     // You can read the selected value of a ComboBox via its getValue() method. 
     // If no choice is selected, the getValue() method returns null
     
-    Button button1 = new Button("Check");
-    button1.setOnAction(value ->  {
+    Button button = new Button("Check");
+    button.setOnAction(value ->  {
       System.out.println("The select value is " + comboBox.getValue()); 
     });
     
 
-    HBox hbox = new HBox(comboBox, button1);
+    HBox hbox = new HBox(comboBox, button);
     hbox.setPadding(new Insets(10,10,10,10));
     hbox.setSpacing(25);
 
