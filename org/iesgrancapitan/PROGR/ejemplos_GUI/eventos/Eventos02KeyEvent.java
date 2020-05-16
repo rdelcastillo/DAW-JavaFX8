@@ -1,3 +1,9 @@
+/**
+ * Este programa impide introducir datos numéricos.
+ * 
+ * Fuente: http://acodigo.blogspot.com/2017/06/eventos-en-javafx.html
+ */
+
 package org.iesgrancapitan.PROGR.ejemplos_GUI.eventos;
 
 import javafx.application.Application;
@@ -10,7 +16,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Ej14KeyEvent extends Application {
+public class Eventos02KeyEvent extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -24,17 +30,10 @@ public class Ej14KeyEvent extends Application {
     root.setPadding(new Insets(5.0));
 
     Scene scene = new Scene(root, 300, 250);
-    scene.addEventFilter(KeyEvent.KEY_TYPED, e -> {
-
-      String type = e.getEventType().getName();
-      String source = e.getSource().getClass().getSimpleName();
-      String target = e.getTarget().getClass().getSimpleName();
-
-      System.out.println("filter: " + type + ", " + source + ", " + target);
-
+    scene.addEventHandler(KeyEvent.KEY_TYPED, e -> {
       if (Character.isDigit(e.getCharacter().charAt(0))) {
         System.out.println("caracter: " + e.getCharacter() + ", no permitido.");
-        e.consume();
+        e.consume(); 
       }
     });
 
