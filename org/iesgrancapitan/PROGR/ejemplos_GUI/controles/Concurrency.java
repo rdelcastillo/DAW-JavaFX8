@@ -10,7 +10,7 @@
  * 
  * No JavaFX GUI controls react to mouse clicks, mouse over, keyboard input while the JavaFX application 
  * thread is busy running that task.
- *  * 
+ * 
  * See more at http://tutorials.jenkov.com/javafx/concurrency.html
  * 
  * In this example we implement a clock.
@@ -50,14 +50,14 @@ public class Concurrency extends Application {
     Label sep2 = new Label(":");
     sep2.setFont(font);
     
-    Label hora = new Label("00");
-    hora.setFont(font);
+    Label hour = new Label("00");
+    hour.setFont(font);
     
-    Label minuto = new Label("00");
-    minuto.setFont(font);
+    Label minute = new Label("00");
+    minute.setFont(font);
     
-    Label segundo = new Label("00");
-    segundo.setFont(font);
+    Label second = new Label("00");
+    second.setFont(font);
     
     /*
      * Sometimes you absolutely need to perform some long-running task in a JavaFX application. 
@@ -72,23 +72,28 @@ public class Concurrency extends Application {
      */
 
     Thread taskThread = new Thread(new Runnable() {
+      private LocalTime now;
+
       @Override
       public void run() {
         while (keepRunning) {
-          Platform.runLater(new Runnable() {
+          now = LocalTime.now();
+          System.out.println(now);
+          
+          Platform.runLater(new Runnable() {    // controls JavaFX update
             @Override
             public void run() {
-              hora   .setText(String.format("%02d", LocalTime.now().getHour()));
-              minuto .setText(String.format("%02d", LocalTime.now().getMinute()));
-              segundo.setText(String.format("%02d", LocalTime.now().getSecond()));
+              hour  .setText(String.format("%02d", now.getHour()));
+              minute.setText(String.format("%02d", now.getMinute()));
+              second.setText(String.format("%02d", now.getSecond()));
             }
           });
           
-          try {
+          try {                                 // wait one second
             Thread.sleep(1000);
           } catch (InterruptedException e) {
             e.printStackTrace();
-          }        
+          }     
         }
       }
     });
@@ -97,7 +102,7 @@ public class Concurrency extends Application {
     
     // Layout, scene and stage
     
-    HBox root = new HBox(5, hora, sep1, minuto, sep2, segundo);
+    HBox root = new HBox(5, hour, sep1, minute, sep2, second);
     root.setPadding(new Insets(10));
     
     Scene scene = new Scene(root);
