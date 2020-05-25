@@ -29,7 +29,6 @@ public class Ej14Controlador {
   // Nos actualizan los datos "desde fuera"
   public void actualiza(String dato) {
     dato3 = dato;
-    //Window app = text1.getScene().getWindow();
   }
 
   @FXML

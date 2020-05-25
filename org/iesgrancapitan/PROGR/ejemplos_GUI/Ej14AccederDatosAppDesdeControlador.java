@@ -25,6 +25,7 @@ import javafx.stage.Stage;
 public class Ej14AccederDatosAppDesdeControlador extends Application {
   public static  String parametro1;     // mal
   private static String parametro2;
+  private String parametro3;            // no es estático
   
   /*
    * Cuando comienza una aplicación JavaFX, hay tres métodos que se llaman en orden. Estos son:
@@ -49,6 +50,7 @@ public class Ej14AccederDatosAppDesdeControlador extends Application {
     // modifico atributos App
     parametro1 = getParameters().getRaw().get(0);
     parametro2 = getParameters().getRaw().get(1);
+    parametro3 = getParameters().getRaw().get(2);
     
     System.out.println("---");
   }
@@ -60,13 +62,20 @@ public class Ej14AccederDatosAppDesdeControlador extends Application {
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vistas/Ej14.fxml"));
     Parent root = fxmlLoader.load();
     
-    /* Además de usar atributos estáticos y acceder a los mismos desde el controlador,
-     * podemos acceder al controlador e "inyectarle" valores desde aquí.
+    /* 
+     * El controlador accederá a los atributos (estáticos) parametro1 y parametro 2 así:
      * 
-     * En este caso le pasamos el tercer argumento.
+     *  - parametro1 directamente desde la clase al ser público y estático.
+     *  - parametro2 con un getter (getParametro2()) al ser privado (y estático).
+     * 
+     * Además de usar atributos estáticos y acceder a los mismos desde el controlador,
+     * que puede haber ocasiones en las que no nos convenga hacerlo así, también podemos 
+     * acceder directamente al controlador desde aquí e "inyectarle" valores.
+     * 
+     * En este caso le vamos a pasar así parametro3.
      */
     Ej14Controlador controller = fxmlLoader.getController();
-    controller.actualiza(getParameters().getRaw().get(2));
+    controller.actualiza(parametro3);
     
     // Añadimos nodo a una escena y esta al escenario
     primaryStage.setScene(new Scene(root));
