@@ -1,6 +1,8 @@
 /**
  * Este programa impide introducir datos numéricos.
  * 
+ * Con un EventFilter capturamos en la escena la tecla pulsada.
+ * 
  * Fuente: http://acodigo.blogspot.com/2017/06/eventos-en-javafx.html
  */
 
@@ -30,7 +32,7 @@ public class Eventos02KeyEvent extends Application {
     root.setPadding(new Insets(5.0));
 
     Scene scene = new Scene(root, 300, 250);
-    scene.addEventHandler(KeyEvent.KEY_TYPED, e -> {
+    scene.addEventFilter(KeyEvent.KEY_TYPED, e -> {
       if (Character.isDigit(e.getCharacter().charAt(0))) {
         System.out.println("caracter: " + e.getCharacter() + ", no permitido.");
         e.consume(); 
