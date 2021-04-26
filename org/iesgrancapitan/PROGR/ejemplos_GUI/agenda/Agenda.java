@@ -77,6 +77,10 @@ public class Agenda implements Iterable<Contacto> {
   public void set(String nombre, int telefono) throws ContactoException {
     set(new Contacto(nombre, 0, ""), telefono);
   }
+  
+  public int size() {
+    return contactos.size();
+  }
 
   @Override
   public String toString() {
