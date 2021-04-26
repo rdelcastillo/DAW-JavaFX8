@@ -1,5 +1,16 @@
 package org.iesgrancapitan.PROGR.ejemplos_GUI;
 
+/**
+ * A veces tenemos que acceder a datos de la aplicación principal desde un controlador, o pasar
+ * información entre controladores.
+ * 
+ * Este ejemplo ilustra como hacerlo, básicamente las formas son:
+ * 
+ * - Usar un objeto estático con los datos que toda la aplicación debe manejar.
+ * - Inyectar a cada controlador el dato, o los datos, que necesita (recomendado).
+ * 
+ */
+
 import java.io.IOException;
 import java.util.List;
 
