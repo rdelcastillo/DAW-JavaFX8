@@ -52,17 +52,24 @@ public class Ej16ControlSpinner extends Application {
         System.out.println("Valor incorrecto: " + newValue);
       }
     });
+    
+    // Podemos acceder a las teclas pulsadas dentro del spinner
+    spinner.getEditor().setOnKeyPressed( e -> {
+      System.out.println("Código tecla: " + e.getCode());
+    });
 
     root.add(spinner, 1, row++, 2, 1);
 
     // Botones
 
     Button button1 = new Button("-5");
+    // accedo a variable donde está SpinnerValueFactory
     button1.setOnAction(value -> valueFactory.setValue(spinner.getValue() - 5));
     root.add(button1, 1, row);
     
     Button button2 = new Button("+5");
-    button2.setOnAction(value -> valueFactory.setValue(spinner.getValue() + 5));
+    // accedo a atributo donde está SpinnerValueFactory
+    button2.setOnAction(value -> spinner.getValueFactory().setValue(spinner.getValue() + 5));
     root.add(button2, 2, row);
 
     // Scene y stage
